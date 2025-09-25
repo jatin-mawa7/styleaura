@@ -22,7 +22,7 @@ export class Ourproducts implements OnInit {
   });
 }
   filterProducts(category: String) {
-    if (category === 'All') {
+    if (category === 'all') {
       this.filteredProducts = this.selectedCategory;
     } else if (category === 'Best Seller') {
       this.filteredProducts = this.selectedCategory.filter((p) => p.rating > 4);

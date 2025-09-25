@@ -33,16 +33,13 @@
         <h3>Browse By</h3>
         <ul>
           <li>
-            <button class="btn btn-link" (click)="filterProducts('All')">All</button>
+            <button class="btn btn-link" (click)="filterProducts('all')">All</button>
             <br />
-            <button class="btn btn-link" (click)="filterProducts('Men')">Men</button><br />
-            <button class="btn btn-link" (click)="filterProducts('Women')">Women</button><br />
-            <button class="btn btn-link" (click)="filterProducts('Kids')">Kids</button><br />
+            <button class="btn btn-link" (click)="filterProducts('beauty')">Beauty</button><br />
+            <button class="btn btn-link" (click)="filterProducts('furniture')">Furniture</button><br />
+            <button class="btn btn-link" (click)="filterProducts('groceries')">Groceries</button><br />
             <button class="btn btn-link" (click)="filterProducts('Best Seller')">Best Seller</button
             ><br />
-            <button class="btn btn-link" (click)="filterProducts('New-arrival')">
-              New Arrival
-            </button>
             <!-- <div class="row-md-4" *ngFor="let product of filteredProducts">
               <div class="card-body">
                 <h3>{{ product.category }}</h3>
