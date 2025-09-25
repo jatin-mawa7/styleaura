@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ProductDetails } from '../product-details';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
@@ -17,12 +19,16 @@ export default class Home implements OnInit {
     'assets/images/homebanner/clark-street-mercantile-qnKhZJPKFD8-unsplash.jpg',
     'assets/images/homebanner/the-blowup-Rmjq07KI20U-unsplash.jpg'
   ];
-
+  constructor(private pdservice: ProductDetails) {}
+  bestSellers: any[] = [];
   ngOnInit() {
     // Automatic slider every 3 seconds
     setInterval(() => {
       this.nextSlide();
     }, 2000);
+    this.pdservice.getProducts().subscribe((data) => {
+      this.bestSellers = data.products.filter(p => p.rating > 4);
+    });
   }
 
   // Slider functions

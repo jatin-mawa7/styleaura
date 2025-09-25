@@ -17,7 +17,18 @@
   </div>
 </section>
 <!-- Best Selling Products Section -->
-<section class="best-selling">
+ <section class="best-selling">
+  <h2>Best Selling Products</h2>
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let productbest of bestSellers">
+     <img [src]="productbest.thumbnail" [alt]="productbest.title" />
+          <h4>{{ productbest.title }}</h4>
+          <p>{{ productbest.price | currency : 'INR' }}</p>
+     
+    </div>
+  </div>
+</section>
+<!-- <section class="best-selling">
   <h2>Best Selling Products</h2>
   <div class="product-grid">
     <div class="product-card">
@@ -48,7 +59,7 @@
       <p class="desc">Tradition meets innovation with a saree that has pockets.</p>
     </div>
   </div>
-</section>
+</section> -->
 <section class="reviews">
   <h2>Customer Reviews</h2>
   <div class="review-container">
